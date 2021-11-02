@@ -1,0 +1,15 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+
+    &:    
+    background-color: orangered;
+    height: 50rem;
+    transition: all 1s;
+
+    &:hover &__side{  // .card:hover .card__side  --> when we hover the card , then the card__side  will transform, and we don not put the hover 
+        // directly on the card__side , beacuse later we can have more no. of card side.  
+        transform: rotateY(180deg);
+
+    }
+}
