@@ -1,15 +1,70 @@
 .card{
+    
     perspective: 150rem;
-    -moz-perspective: 150rem;
-
-    &:    
-    background-color: orangered;
+    -moz-perspective: 150rem; //to work in mozilla firefox ,we have addded in this line
+    position: relative;
     height: 50rem;
-    transition: all 1s;
 
-    &:hover &__side{  // .card:hover .card__side  --> when we hover the card , then the card__side  will transform, and we don not put the hover 
-        // directly on the card__side , beacuse later we can have more no. of card side.  
+    &__side{
+    color: #fff;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all .8s ease;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1.3rem 3rem rgba($color-black,.15);
+
+    &--front{
+        background-color: $color-white;
+    }
+
+    &--back{
         transform: rotateY(180deg);
 
+        &-1{
+            background-image:linear-gradient(to right bottom,#ffb84dcc,#ff8000);
+            }
     }
+
+    }
+
+
+    &:hover &__side--front{  // .card:hover .card__side  --> when we hover the card , then the card__side  will transform, and we don not put the hover 
+        // directly on the card__side , beacuse later we can have more no. of card side.  
+        transform: rotateY(-180deg);
+
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+
+    //front side styling
+    &__pictures{
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: hue;
+        clip-path: polygon(0 0,100% 0, 100% 85%,0 100%);
+        -web
+
+        &--1{
+           background-image:linear-gradient(to right bottom,#ffb84dcc,#ff8000),url(img/nat-5.jpg);
+        }
+
+        &--2{
+            background-image: url(img/nat-5.jpg);
+            
+         }
+
+         &--3{
+            background-image: url(img/nat-5.jpg);
+         }
+
+    }
+
 }

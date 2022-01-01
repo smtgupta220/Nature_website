@@ -7,13 +7,17 @@
 //       margin-bottom: 0px;
 //   }
 // other method , is use "not pseudo class"
-  
+    
     &:not(:last-child){  //  .row:not(:last-child)  // it will put  all the properties defined under this block to all child
     //except the child except the last child 
     margin-bottom:$gutter-vertical;
     }
-
+ 
     @include clearfix;
+
+    // [class^="col-"] -- select all class that start with name "col-",
+    // [class*="col-"] -- select all class that contains the name "col-"
+    // [class$="col-"] -- select all class that end with the name "col-"
 
     [class^="col-"]{
       float: left;
